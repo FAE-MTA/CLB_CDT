@@ -54,17 +54,17 @@ const staffProfiles = {
 const memberGroups = {
   outerMembers: {
     group: 'Thành viên câu lạc bộ',
-    title: 'Ngoại môn đệ tử (Tập sự)',
+    title: 'Thành viên Tập sự',
     members: Array.from({ length: 8 }, (_, i) => ({ stt: i + 1, name: '', className: '' }))
   },
   innerMembers: {
     group: 'Thành viên câu lạc bộ',
-    title: 'Nội môn đệ tử (Chính thức)',
+    title: 'Thành viên Chính thức',
     members: Array.from({ length: 8 }, (_, i) => ({ stt: i + 1, name: '', className: '' }))
   },
   coreMembers: {
     group: 'Thành viên câu lạc bộ',
-    title: 'Chân truyền đệ tử (Nòng cốt)',
+    title: 'Thành viên Nòng cốt',
     members: Array.from({ length: 8 }, (_, i) => ({ stt: i + 1, name: '', className: '' }))
   }
 };
