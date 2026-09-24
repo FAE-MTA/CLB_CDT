@@ -4,36 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CLB Cơ điện tử</title>
-  <meta name="description" content="Sơ đồ tương tác Câu lạc bộ Cơ điện tử" />
+  <meta name="description" content="Website tương tác của Câu lạc bộ Cơ điện tử – Khoa Hàng không Vũ trụ" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="viewer" aria-label="Sơ đồ nhân sự CLB Cơ điện tử">
-    <div class="poster-shell">
-      <div class="poster-stage" id="posterStage">
-        <img src="assets/clb-map.png" alt="Sơ đồ tổ chức Câu lạc bộ Cơ điện tử" />
-        <div id="hotspots" class="hotspots" aria-label="Các vị trí có thể xem thông tin"></div>
+  <main class="viewer">
+    <section class="page-stage is-active" id="homePage" aria-label="Trang chủ CLB Cơ điện tử">
+      <div class="scene-wrap">
+        <img src="assets/home-map.webp" alt="Giao diện chính Câu lạc bộ Cơ điện tử - Khoa Hàng không Vũ trụ" class="scene-image" />
+        <div id="homeHotspots" class="hotspots"></div>
       </div>
-    </div>
+    </section>
+
+    <section class="page-stage" id="orgPage" aria-label="Cơ cấu tổ chức CLB Cơ điện tử">
+      <button id="backHomeBtn" class="back-home-btn" type="button">← Sơn Môn</button>
+      <div class="scene-wrap">
+        <img src="assets/org-map.webp" alt="Sơ đồ cơ cấu tổ chức Câu lạc bộ Cơ điện tử" class="scene-image" />
+        <div id="orgHotspots" class="hotspots"></div>
+      </div>
+    </section>
   </main>
 
-  <div class="modal" id="profileModal" aria-hidden="true">
+  <div class="modal" id="scrollModal" aria-hidden="true">
     <div class="modal-backdrop" data-close="modal"></div>
-    <article class="profile-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <article class="scroll-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="close-btn" type="button" aria-label="Đóng" data-close="modal">×</button>
       <div class="scroll-rod top"></div>
       <div class="scroll-paper">
 
-        <section id="profileView" class="modal-view">
+        <section id="messageView" class="modal-view hidden">
+          <div class="message-head">
+            <div class="modal-kicker" id="messageKicker"></div>
+            <h2 id="messageTitle"></h2>
+          </div>
+          <div class="message-body" id="messageBody"></div>
+        </section>
+
+        <section id="profileView" class="modal-view hidden">
           <div class="profile-head">
             <div class="avatar" id="profileAvatar">TS</div>
             <div class="profile-head-text">
-              <div class="profile-kicker" id="profileGroup"></div>
+              <div class="modal-kicker" id="profileGroup"></div>
               <h2 id="profileName"></h2>
               <p class="profile-role" id="profileRole"></p>
             </div>
           </div>
-
           <dl class="profile-grid">
             <div>
               <dt>Chức vụ</dt>
@@ -59,11 +74,10 @@
         </section>
 
         <section id="memberView" class="modal-view hidden">
-          <div class="member-head">
-            <div class="member-kicker" id="memberGroup"></div>
+          <div class="message-head member-head">
+            <div class="modal-kicker" id="memberGroup"></div>
             <h2 id="memberTitle"></h2>
           </div>
-
           <div class="member-table-wrap">
             <table class="member-table">
               <thead>
